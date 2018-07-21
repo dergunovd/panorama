@@ -1,0 +1,24 @@
+{
+  "name": "panorama",
+  "version": "1.0.0",
+  "description": "3D panorama in your browser",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dergunovd/panorama.git"
+  },
+  "keywords": [
+    "css3d",
+    "webgl",
+    "3d"
+  ],
+  "author": "Dmitry Dergunov <dmitry@dergunov.net>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/dergunovd/panorama/issues"
+  },
+  "homepage": "https://github.com/dergunovd/panorama#readme"
+}
