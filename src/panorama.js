@@ -1,8 +1,74 @@
+const THREE = require('three/build/three.min');
+
+let images = [],
+  points = [];
+const hashChangeCustomHandler = () => {
+  switch (location.hash) {
+    case '#room1':
+      images = [
+        './images/room1/px.jpg',
+        './images/room1/nx.jpg',
+        './images/room1/py.jpg',
+        './images/room1/ny.jpg',
+        './images/room1/pz.jpg',
+        './images/room1/nz.jpg'
+      ];
+      points = [
+        {
+          url: '#room0',
+          position: [-496, -100, -300],
+          rotation: [0, Math.PI / 2, 0]
+        }
+      ];
+      break;
+    case '#room2':
+      images = [
+        './images/room2/px.jpg',
+        './images/room2/nx.jpg',
+        './images/room2/py.jpg',
+        './images/room2/ny.jpg',
+        './images/room2/pz.jpg',
+        './images/room2/nz.jpg'
+      ];
+      points = [
+        {
+          url: '#room0',
+          position: [496, -100, 496],
+          rotation: [0, Math.PI, 0]
+        }
+      ];
+      break;
+    default:
+      images = [
+        './images/room0/px.jpg',
+        './images/room0/nx.jpg',
+        './images/room0/py.jpg',
+        './images/room0/ny.jpg',
+        './images/room0/pz.jpg',
+        './images/room0/nz.jpg'
+      ];
+      points = [
+        {
+          url: '#room1',
+          position: [200, -100, -496],
+          rotation: [0, 0.7, 0]
+        },
+        {
+          url: '#room2',
+          position: [496, -200, -250],
+          rotation: [0, -Math.PI / 2, 0]
+        }
+      ];
+      break;
+  }
+};
+hashChangeCustomHandler();
+
 // Device Orientation Control
 THREE.DeviceOrientationControls = function(object) {
   const scope = this;
   this.object = object;
-  this.object.rotation.reorder("YXZ");
+  this.object.rotation.reorder('YXZ');
   this.enabled = true;
   this.deviceOrientation = {};
   this.screenOrientation = 0;
@@ -16,29 +82,28 @@ THREE.DeviceOrientationControls = function(object) {
     scope.screenOrientation = window.orientation || 0;
   };
 
-  const setObjectQuaternion = (() => {
-    const THREE = THREE;
+  const setObjectQuaternion = (THREE => {
     const zee = new THREE.Vector3(0, 0, 1);
     const euler = new THREE.Euler();
     const q0 = new THREE.Quaternion();
     const q1 = new THREE.Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
     return (quaternion, alpha, beta, gamma, orient) => {
-      euler.set(beta, alpha, -gamma, "YXZ");
+      euler.set(beta, alpha, -gamma, 'YXZ');
       quaternion.setFromEuler(euler);
       quaternion.multiply(q1);
       quaternion.multiply(q0.setFromAxisAngle(zee, -orient));
     };
-  })();
+  })(THREE);
 
   this.connect = () => {
     onScreenOrientationChangeEvent();
     window.addEventListener(
-      "orientationchange",
+      'orientationchange',
       onScreenOrientationChangeEvent,
       false
     );
     window.addEventListener(
-      "deviceorientation",
+      'deviceorientation',
       onDeviceOrientationChangeEvent,
       false
     );
@@ -47,12 +112,12 @@ THREE.DeviceOrientationControls = function(object) {
 
   this.disconnect = () => {
     window.removeEventListener(
-      "orientationchange",
+      'orientationchange',
       onScreenOrientationChangeEvent,
       false
     );
     window.removeEventListener(
-      "deviceorientation",
+      'deviceorientation',
       onDeviceOrientationChangeEvent,
       false
     );
@@ -86,9 +151,9 @@ THREE.CSS3DObject = function(element) {
   THREE.Object3D.call(this);
 
   this.element = element;
-  this.element.style.position = "absolute";
+  this.element.style.position = 'absolute';
 
-  this.addEventListener("removed", () => {
+  this.addEventListener('removed', () => {
     if (this.element.parentNode !== null) {
       this.element.parentNode.removeChild(this.element);
     }
@@ -112,18 +177,18 @@ THREE.CSS3DRenderer = function() {
   const matrix = new THREE.Matrix4();
 
   const cache = {
-    camera: { fov: 0, style: "" },
+    camera: { fov: 0, style: '' },
     objects: new WeakMap()
   };
 
-  const domElement = document.createElement("div");
-  domElement.style.overflow = "hidden";
+  const domElement = document.createElement('div');
+  domElement.style.overflow = 'hidden';
 
   this.domElement = domElement;
 
-  const cameraElement = document.createElement("div");
+  const cameraElement = document.createElement('div');
 
-  cameraElement.style.transformStyle = "preserve-3d";
+  cameraElement.style.transformStyle = 'preserve-3d';
 
   domElement.appendChild(cameraElement);
 
@@ -155,78 +220,78 @@ THREE.CSS3DRenderer = function() {
     const elements = matrix.elements;
 
     return (
-      "matrix3d(" +
+      'matrix3d(' +
       epsilon(elements[0]) +
-      "," +
+      ',' +
       epsilon(-elements[1]) +
-      "," +
+      ',' +
       epsilon(elements[2]) +
-      "," +
+      ',' +
       epsilon(elements[3]) +
-      "," +
+      ',' +
       epsilon(elements[4]) +
-      "," +
+      ',' +
       epsilon(-elements[5]) +
-      "," +
+      ',' +
       epsilon(elements[6]) +
-      "," +
+      ',' +
       epsilon(elements[7]) +
-      "," +
+      ',' +
       epsilon(elements[8]) +
-      "," +
+      ',' +
       epsilon(-elements[9]) +
-      "," +
+      ',' +
       epsilon(elements[10]) +
-      "," +
+      ',' +
       epsilon(elements[11]) +
-      "," +
+      ',' +
       epsilon(elements[12]) +
-      "," +
+      ',' +
       epsilon(-elements[13]) +
-      "," +
+      ',' +
       epsilon(elements[14]) +
-      "," +
+      ',' +
       epsilon(elements[15]) +
-      ")"
+      ')'
     );
   }
 
   function getObjectCSSMatrix(matrix, cameraCSSMatrix) {
     const elements = matrix.elements;
     const matrix3d =
-      "matrix3d(" +
+      'matrix3d(' +
       epsilon(elements[0]) +
-      "," +
+      ',' +
       epsilon(elements[1]) +
-      "," +
+      ',' +
       epsilon(elements[2]) +
-      "," +
+      ',' +
       epsilon(elements[3]) +
-      "," +
+      ',' +
       epsilon(-elements[4]) +
-      "," +
+      ',' +
       epsilon(-elements[5]) +
-      "," +
+      ',' +
       epsilon(-elements[6]) +
-      "," +
+      ',' +
       epsilon(-elements[7]) +
-      "," +
+      ',' +
       epsilon(elements[8]) +
-      "," +
+      ',' +
       epsilon(elements[9]) +
-      "," +
+      ',' +
       epsilon(elements[10]) +
-      "," +
+      ',' +
       epsilon(elements[11]) +
-      "," +
+      ',' +
       epsilon(elements[12]) +
-      "," +
+      ',' +
       epsilon(elements[13]) +
-      "," +
+      ',' +
       epsilon(elements[14]) +
-      "," +
+      ',' +
       epsilon(elements[15]) +
-      ")";
+      ')';
 
     if (isIE) {
       return `translate(-50%,-50%)translate(${_widthHalf}px,${_heightHalf}px)${cameraCSSMatrix}${matrix3d}`;
@@ -358,11 +423,8 @@ const target = new THREE.Vector3();
 let camera,
   scene,
   renderer,
-  geometry,
-  material,
-  mesh,
   controls,
-  lon = 90,
+  lon = -90,
   lat = 0,
   phi = 0,
   theta = 0,
@@ -382,32 +444,32 @@ function init() {
   controls = new THREE.DeviceOrientationControls(camera);
   const sides = [
     {
-      url: "px.jpg",
+      url: images[0],
       position: [-512, 0, 0],
       rotation: [0, Math.PI / 2, 0]
     },
     {
-      url: "nx.jpg",
+      url: images[1],
       position: [512, 0, 0],
       rotation: [0, -Math.PI / 2, 0]
     },
     {
-      url: "py.jpg",
+      url: images[2],
       position: [0, 512, 0],
       rotation: [Math.PI / 2, 0, Math.PI]
     },
     {
-      url: "ny.jpg",
+      url: images[3],
       position: [0, -512, 0],
       rotation: [-Math.PI / 2, 0, Math.PI]
     },
     {
-      url: "pz.jpg",
+      url: images[4],
       position: [0, 0, 512],
       rotation: [0, Math.PI, 0]
     },
     {
-      url: "nz.jpg",
+      url: images[5],
       position: [0, 0, -512],
       rotation: [0, 0, 0]
     }
@@ -416,7 +478,7 @@ function init() {
   scene.add(cube);
   for (let i = sides.length - 1; i > -1; i--) {
     const side = sides[i];
-    const element = document.createElement("img");
+    const element = document.createElement('img');
     element.width = 1028;
     element.src = side.url;
     const object = new THREE.CSS3DObject(element);
@@ -424,21 +486,31 @@ function init() {
     object.rotation.fromArray(side.rotation);
     cube.add(object);
   }
+  for (let i = points.length - 1; i > -1; i--) {
+    const point = points[i];
+    const element = document.createElement('a');
+    element.className = 'arrow';
+    element.href = point.url;
+    const object = new THREE.CSS3DObject(element);
+    object.position.fromArray(point.position);
+    object.rotation.fromArray(point.rotation);
+    cube.add(object);
+  }
   renderer = new THREE.CSS3DRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 
-  document.addEventListener("mousedown", onDocumentMouseDown, false);
-  document.addEventListener("wheel", onDocumentMouseWheel, false);
-  document.addEventListener("touchstart", onDocumentTouchStart, false);
-  document.addEventListener("touchmove", onDocumentTouchMove, false);
-  window.addEventListener("resize", onWindowResize, false);
+  document.addEventListener('mousedown', onDocumentMouseDown, false);
+  document.addEventListener('wheel', onDocumentMouseWheel, false);
+  document.addEventListener('touchstart', onDocumentTouchStart, false);
+  document.addEventListener('touchmove', onDocumentTouchMove, false);
+  window.addEventListener('resize', onWindowResize, false);
 }
 
 function onDocumentMouseDown(event) {
   event.preventDefault();
-  document.addEventListener("mousemove", onDocumentMouseMove, false);
-  document.addEventListener("mouseup", onDocumentMouseUp, false);
+  document.addEventListener('mousemove', onDocumentMouseMove, false);
+  document.addEventListener('mouseup', onDocumentMouseUp, false);
 }
 
 function onDocumentMouseMove(event) {
@@ -449,8 +521,8 @@ function onDocumentMouseMove(event) {
 }
 
 function onDocumentMouseUp() {
-  document.removeEventListener("mousemove", onDocumentMouseMove);
-  document.removeEventListener("mouseup", onDocumentMouseUp);
+  document.removeEventListener('mousemove', onDocumentMouseMove);
+  document.removeEventListener('mouseup', onDocumentMouseUp);
 }
 
 function onDocumentMouseWheel(event) {
@@ -495,3 +567,12 @@ function animate() {
   }
   renderer.render(scene, camera);
 }
+
+const hashChangeHandler = () => {
+  const body = document.body;
+  body.removeChild(body.lastChild);
+  hashChangeCustomHandler();
+  init();
+};
+
+window.addEventListener('hashchange', hashChangeHandler, false);

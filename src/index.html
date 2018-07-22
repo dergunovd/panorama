@@ -4,9 +4,90 @@
   <title>Panorama DEMO</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+    .arrow {
+      width: 40px;
+      height: 40px;
+      background: #5B2C6F;
+      box-shadow: 5px 5px 20px #000;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body>
-  <script src="../src/three.min.js"></script>
-  <script src="../src/panorama.js"></script>
+<body style="margin: 0; cursor: move">
+<script src="./panorama.js"></script>
+<script>
+  let images, points;
+  const onHashChange = () => {
+    switch (location.hash) {
+      case '#room1':
+        console.log(location.hash);
+        images = [
+          './images/room1/px.jpg',
+          './images/room1/nx.jpg',
+          './images/room1/py.jpg',
+          './images/room1/ny.jpg',
+          './images/room1/pz.jpg',
+          './images/room1/nz.jpg'
+        ];
+        points = [
+          {
+            url: '#room0',
+            position: [-496, -100, -300],
+            rotation: [0, Math.PI / 2, 0]
+          }
+        ];
+        break;
+      case '#room2':
+        images = [
+          './images/room2/px.jpg',
+          './images/room2/nx.jpg',
+          './images/room2/py.jpg',
+          './images/room2/ny.jpg',
+          './images/room2/pz.jpg',
+          './images/room2/nz.jpg'
+        ];
+        points = [];
+        break;
+      default:
+        images = [
+          './images/room0/px.jpg',
+          './images/room0/nx.jpg',
+          './images/room0/py.jpg',
+          './images/room0/ny.jpg',
+          './images/room0/pz.jpg',
+          './images/room0/nz.jpg'
+        ];
+        points = [
+          {
+            url: '#room1',
+            position: [496, -200, -250],
+            rotation: [0, -Math.PI / 2, 0]
+          }
+        ];
+        break;
+    }
+  };
+  onHashChange();
+  const panorama = new Panorama({
+    images: [
+      './images/room0/px.jpg',
+      './images/room0/nx.jpg',
+      './images/room0/py.jpg',
+      './images/room0/ny.jpg',
+      './images/room0/pz.jpg',
+      './images/room0/nz.jpg'
+    ],
+    points: [
+      {
+        url: '#room1',
+        position: [496, -200, -250],
+        rotation: [0, -Math.PI / 2, 0]
+      }
+    ]
+  });
+</script>
 </body>
 </html>
