@@ -1,18 +1,32 @@
+"use strict";
 const THREE = require('three/build/three.min');
 
 let images = [],
   points = [];
+const allImages = [
+  (new Image().src = './images/room0/px.jpg'),
+  (new Image().src = './images/room0/nx.jpg'),
+  (new Image().src = './images/room0/py.jpg'),
+  (new Image().src = './images/room0/ny.jpg'),
+  (new Image().src = './images/room0/pz.jpg'),
+  (new Image().src = './images/room0/nz.jpg'),
+  (new Image().src = './images/room1/px.jpg'),
+  (new Image().src = './images/room1/nx.jpg'),
+  (new Image().src = './images/room1/py.jpg'),
+  (new Image().src = './images/room1/ny.jpg'),
+  (new Image().src = './images/room1/pz.jpg'),
+  (new Image().src = './images/room1/nz.jpg'),
+  (new Image().src = './images/room2/px.jpg'),
+  (new Image().src = './images/room2/nx.jpg'),
+  (new Image().src = './images/room2/py.jpg'),
+  (new Image().src = './images/room2/ny.jpg'),
+  (new Image().src = './images/room2/pz.jpg'),
+  (new Image().src = './images/room2/nz.jpg')
+];
 const hashChangeCustomHandler = () => {
   switch (location.hash) {
     case '#room1':
-      images = [
-        './images/room1/px.jpg',
-        './images/room1/nx.jpg',
-        './images/room1/py.jpg',
-        './images/room1/ny.jpg',
-        './images/room1/pz.jpg',
-        './images/room1/nz.jpg'
-      ];
+      images = allImages.slice(6, 12);
       points = [
         {
           url: '#room0',
@@ -22,14 +36,7 @@ const hashChangeCustomHandler = () => {
       ];
       break;
     case '#room2':
-      images = [
-        './images/room2/px.jpg',
-        './images/room2/nx.jpg',
-        './images/room2/py.jpg',
-        './images/room2/ny.jpg',
-        './images/room2/pz.jpg',
-        './images/room2/nz.jpg'
-      ];
+      images = allImages.slice(12, 18);
       points = [
         {
           url: '#room0',
@@ -39,19 +46,12 @@ const hashChangeCustomHandler = () => {
       ];
       break;
     default:
-      images = [
-        './images/room0/px.jpg',
-        './images/room0/nx.jpg',
-        './images/room0/py.jpg',
-        './images/room0/ny.jpg',
-        './images/room0/pz.jpg',
-        './images/room0/nz.jpg'
-      ];
+      images = allImages.slice(0, 6);
       points = [
         {
           url: '#room1',
-          position: [200, -100, -496],
-          rotation: [0, 0.7, 0]
+          position: [190, -100, -496],
+          rotation: [0, 0, 0]
         },
         {
           url: '#room2',
@@ -63,7 +63,6 @@ const hashChangeCustomHandler = () => {
   }
 };
 hashChangeCustomHandler();
-
 // Device Orientation Control
 THREE.DeviceOrientationControls = function(object) {
   const scope = this;
@@ -514,8 +513,10 @@ function onDocumentMouseDown(event) {
 }
 
 function onDocumentMouseMove(event) {
-  const movementX = event.movementX || 0;
-  const movementY = event.movementY || 0;
+  const movementX =
+    event.movementX || 0;
+  const movementY =
+    event.movementY || 0;
   lon -= movementX * 0.1;
   lat += movementY * 0.1;
 }

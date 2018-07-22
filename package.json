@@ -4,9 +4,9 @@
   "description": "3D panorama in your browser",
   "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
+    "serve": "(cd dist; lite-server)",
     "deploy": "scp -r dist/* dergunov.net:/var/www/3d.dergunov.net/html"
   },
   "repository": {
