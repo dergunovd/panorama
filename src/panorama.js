@@ -2,6 +2,26 @@ const THREE = require('three/build/three.min');
 
 let images = [],
   points = [];
+const imagesShouldLoad = [
+  (new Image()).src = './images/room0/px.jpg',
+  (new Image()).src = './images/room0/nx.jpg',
+  (new Image()).src = './images/room0/py.jpg',
+  (new Image()).src = './images/room0/ny.jpg',
+  (new Image()).src = './images/room0/pz.jpg',
+  (new Image()).src = './images/room0/nz.jpg',
+  (new Image()).src = './images/room1/px.jpg',
+  (new Image()).src = './images/room1/nx.jpg',
+  (new Image()).src = './images/room1/py.jpg',
+  (new Image()).src = './images/room1/ny.jpg',
+  (new Image()).src = './images/room1/pz.jpg',
+  (new Image()).src = './images/room1/nz.jpg',
+  (new Image()).src = './images/room2/px.jpg',
+  (new Image()).src = './images/room2/nx.jpg',
+  (new Image()).src = './images/room2/py.jpg',
+  (new Image()).src = './images/room2/ny.jpg',
+  (new Image()).src = './images/room2/pz.jpg',
+  (new Image()).src = './images/room2/nz.jpg'
+];
 const hashChangeCustomHandler = () => {
   switch (location.hash) {
     case '#room1':
@@ -50,8 +70,8 @@ const hashChangeCustomHandler = () => {
       points = [
         {
           url: '#room1',
-          position: [200, -100, -496],
-          rotation: [0, 0.7, 0]
+          position: [190, -100, -496],
+          rotation: [0, 0, 0]
         },
         {
           url: '#room2',
