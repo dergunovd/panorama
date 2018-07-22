@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch"
+    "dev": "webpack --mode development --watch",
+    "deploy": "scp -r dist/* dergunov.net:/var/www/3d.dergunov.net/html"
   },
   "repository": {
     "type": "git",
