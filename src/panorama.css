@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  cursor: move;
+}
+.arrow {
+  width: 40px;
+  height: 40px;
+  background: #5b2c6f;
+  box-shadow: 5px 5px 20px #000;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.arrow:hover,
+.arrow:active {
+  opacity: 1;
+}

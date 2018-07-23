@@ -2,7 +2,7 @@
   "name": "panorama",
   "version": "1.0.0",
   "description": "3D panorama in your browser",
-  "main": "src/index.html",
+  "main": "src/public/index.html",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
@@ -28,10 +28,20 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
-    "webpack": "^4.16.1"
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "raw-loader": "^0.5.1",
+    "serviceworker-webpack-plugin": "^1.0.1",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "latest",
+    "webpack": "^4.16.1",
+    "webpack-manifest-plugin": "^2.0.3"
   },
   "dependencies": {
     "three": "^0.94.0",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-pwa-manifest": "^3.6.2"
   }
 }

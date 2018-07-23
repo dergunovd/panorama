@@ -1,3 +1,4 @@
+require('./panorama.css');
 "use strict";
 const THREE = require('three/build/three.min');
 
@@ -63,6 +64,7 @@ const hashChangeCustomHandler = () => {
   }
 };
 hashChangeCustomHandler();
+
 // Device Orientation Control
 THREE.DeviceOrientationControls = function(object) {
   const scope = this;
