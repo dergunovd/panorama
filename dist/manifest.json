@@ -1,0 +1,10 @@
+{
+  "name": "Panorama DEMO",
+  "short_name": "Panorama DEMO",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "background_color": "#fff",
+  "description": "Demo panorama application",
+  "theme_color": "#873600"
+}
