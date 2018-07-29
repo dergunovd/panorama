@@ -125,6 +125,7 @@ var THREE = __webpack_require__(6),
       images = allImages.slice(6, 12);
       points = [{
         url: '#room0',
+        className: 'door',
         position: [-496, -100, -300],
         rotation: [0, Math.PI / 2, 0]
       }];
@@ -133,6 +134,7 @@ var THREE = __webpack_require__(6),
       images = allImages.slice(12, 18);
       points = [{
         url: '#room0',
+        className: 'arrow',
         position: [496, -100, 496],
         rotation: [0, Math.PI, 0]
       }];
@@ -141,10 +143,12 @@ var THREE = __webpack_require__(6),
       images = allImages.slice(0, 6);
       points = [{
         url: '#room1',
+        className: 'door',
         position: [190, -100, -496],
         rotation: [0, 0, 0]
       }, {
         url: '#room2',
+        className: 'arrow',
         position: [496, -200, -250],
         rotation: [0, -Math.PI / 2, 0]
       }];
@@ -480,7 +484,7 @@ function init() {
   for (var _i = points.length - 1; _i > -1; _i--) {
     var point = points[_i];
     var _element = document.createElement('a');
-    _element.className = 'arrow';
+    _element.className = 'point ' + point.className;
     _element.href = point.url;
     var _object = new THREE.CSS3DObject(_element);
     _object.position.fromArray(point.position);
@@ -602,7 +606,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  cursor: move;\n}\n\n.arrow {\n  width: 40px;\n  height: 40px;\n  background: #5b2c6f;\n  box-shadow: 5px 5px 20px #000;\n  border: 5px solid #fff;\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.arrow:hover,\n.arrow:active {\n  opacity: 1;\n}", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  cursor: move;\n}\n\n.point {\n  width: 60px;\n  height: 60px;\n  position: relative;\n  cursor: pointer;\n  opacity: .7;\n}\n\n.point.arrow {\n  background: url(\"/images/arrow.svg\") center center no-repeat / cover;\n}\n\n.point.door {\n  background: url(\"/images/door.svg\") center center no-repeat / cover;\n}\n\n.point:hover,\n.point:active {\n  opacity: 1;\n}", ""]);
 
 // exports
 

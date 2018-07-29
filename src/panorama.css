@@ -3,17 +3,23 @@ body {
   cursor: move;
 }
 
-.arrow {
-  width: 40px;
-  height: 40px;
-  background: #5b2c6f;
-  box-shadow: 5px 5px 20px #000;
-  border: 5px solid #fff;
-  border-radius: 50%;
+.point {
+  width: 60px;
+  height: 60px;
+  position: relative;
   cursor: pointer;
+  opacity: .7;
 }
 
-.arrow:hover,
-.arrow:active {
+.point.arrow {
+  background: url("/images/arrow.svg") center center no-repeat / cover;
+}
+
+.point.door {
+  background: url("/images/door.svg") center center no-repeat / cover;
+}
+
+.point:hover,
+.point:active {
   opacity: 1;
 }
