@@ -1,68 +1,90 @@
 require('./panorama.css');
-"use strict";
-const THREE = require('three/build/three.min');
-
+('use strict');
 let images = [],
-  points = [];
-const allImages = [
-  (new Image().src = './images/room0/px.jpg'),
-  (new Image().src = './images/room0/nx.jpg'),
-  (new Image().src = './images/room0/py.jpg'),
-  (new Image().src = './images/room0/ny.jpg'),
-  (new Image().src = './images/room0/pz.jpg'),
-  (new Image().src = './images/room0/nz.jpg'),
-  (new Image().src = './images/room1/px.jpg'),
-  (new Image().src = './images/room1/nx.jpg'),
-  (new Image().src = './images/room1/py.jpg'),
-  (new Image().src = './images/room1/ny.jpg'),
-  (new Image().src = './images/room1/pz.jpg'),
-  (new Image().src = './images/room1/nz.jpg'),
-  (new Image().src = './images/room2/px.jpg'),
-  (new Image().src = './images/room2/nx.jpg'),
-  (new Image().src = './images/room2/py.jpg'),
-  (new Image().src = './images/room2/ny.jpg'),
-  (new Image().src = './images/room2/pz.jpg'),
-  (new Image().src = './images/room2/nz.jpg')
-];
-const hashChangeCustomHandler = () => {
-  switch (location.hash) {
-    case '#room1':
-      images = allImages.slice(6, 12);
-      points = [
-        {
-          url: '#room0',
-          position: [-496, -100, -300],
-          rotation: [0, Math.PI / 2, 0]
-        }
-      ];
-      break;
-    case '#room2':
-      images = allImages.slice(12, 18);
-      points = [
-        {
-          url: '#room0',
-          position: [496, -100, 496],
-          rotation: [0, Math.PI, 0]
-        }
-      ];
-      break;
-    default:
-      images = allImages.slice(0, 6);
-      points = [
-        {
-          url: '#room1',
-          position: [190, -100, -496],
-          rotation: [0, 0, 0]
-        },
-        {
-          url: '#room2',
-          position: [496, -200, -250],
-          rotation: [0, -Math.PI / 2, 0]
-        }
-      ];
-      break;
-  }
-};
+  points = [],
+  loadedImages = 0;
+
+const THREE = require('three/build/three.min'),
+  imageOnload = () => {
+    loadedImages++;
+    if (loadedImages === allImages.length) {
+      document.getElementById('loader').remove();
+    }
+  },
+  canUseWebP = () => {
+    const elem = document.createElement('canvas');
+    return (
+      !!(elem.getContext && elem.getContext('2d')) &&
+      elem.toDataURL('image/webp').indexOf('data:image/webp') === 0
+    );
+  },
+  createImage = src => {
+    const image = new Image();
+    image.src = src;
+    image.onload = imageOnload;
+    return image;
+  },
+  imagesSrcWithoutExt = [
+    './images/room0/px',
+    './images/room0/nx',
+    './images/room0/py',
+    './images/room0/ny',
+    './images/room0/pz',
+    './images/room0/nz',
+    './images/room1/px',
+    './images/room1/nx',
+    './images/room1/py',
+    './images/room1/ny',
+    './images/room1/pz',
+    './images/room1/nz',
+    './images/room2/px',
+    './images/room2/nx',
+    './images/room2/py',
+    './images/room2/ny',
+    './images/room2/pz',
+    './images/room2/nz'
+  ],
+  ext = canUseWebP() ? 'webp' : 'jpg',
+  allImages = imagesSrcWithoutExt.map(src => createImage(`${src}.${ext}`).src),
+  hashChangeCustomHandler = () => {
+    switch (location.hash) {
+      case '#room1':
+        images = allImages.slice(6, 12);
+        points = [
+          {
+            url: '#room0',
+            position: [-496, -100, -300],
+            rotation: [0, Math.PI / 2, 0]
+          }
+        ];
+        break;
+      case '#room2':
+        images = allImages.slice(12, 18);
+        points = [
+          {
+            url: '#room0',
+            position: [496, -100, 496],
+            rotation: [0, Math.PI, 0]
+          }
+        ];
+        break;
+      default:
+        images = allImages.slice(0, 6);
+        points = [
+          {
+            url: '#room1',
+            position: [190, -100, -496],
+            rotation: [0, 0, 0]
+          },
+          {
+            url: '#room2',
+            position: [496, -200, -250],
+            rotation: [0, -Math.PI / 2, 0]
+          }
+        ];
+        break;
+    }
+  };
 hashChangeCustomHandler();
 
 // Device Orientation Control
@@ -515,10 +537,8 @@ function onDocumentMouseDown(event) {
 }
 
 function onDocumentMouseMove(event) {
-  const movementX =
-    event.movementX || 0;
-  const movementY =
-    event.movementY || 0;
+  const movementX = event.movementX || 0;
+  const movementY = event.movementY || 0;
   lon -= movementX * 0.1;
   lat += movementY * 0.1;
 }

@@ -2,6 +2,7 @@ body {
   margin: 0;
   cursor: move;
 }
+
 .arrow {
   width: 40px;
   height: 40px;
@@ -11,6 +12,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
 }
+
 .arrow:hover,
 .arrow:active {
   opacity: 1;

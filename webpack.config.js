@@ -72,7 +72,7 @@ module.exports = {
       {
         filename: '[name][ext]',
         name: 'Panorama DEMO',
-        short_name: 'Panorama DEMO',
+        short_name: 'Panorama',
         start_url: '.',
         display: 'standalone',
         background_color: '#fff',

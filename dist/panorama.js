@@ -92,13 +92,34 @@
 
 
 __webpack_require__(1);
-"use strict";
-var THREE = __webpack_require__(6);
-
+'use strict';
 var images = [],
-    points = [];
-var allImages = [new Image().src = './images/room0/px.jpg', new Image().src = './images/room0/nx.jpg', new Image().src = './images/room0/py.jpg', new Image().src = './images/room0/ny.jpg', new Image().src = './images/room0/pz.jpg', new Image().src = './images/room0/nz.jpg', new Image().src = './images/room1/px.jpg', new Image().src = './images/room1/nx.jpg', new Image().src = './images/room1/py.jpg', new Image().src = './images/room1/ny.jpg', new Image().src = './images/room1/pz.jpg', new Image().src = './images/room1/nz.jpg', new Image().src = './images/room2/px.jpg', new Image().src = './images/room2/nx.jpg', new Image().src = './images/room2/py.jpg', new Image().src = './images/room2/ny.jpg', new Image().src = './images/room2/pz.jpg', new Image().src = './images/room2/nz.jpg'];
-var hashChangeCustomHandler = function hashChangeCustomHandler() {
+    points = [],
+    loadedImages = 0;
+
+var THREE = __webpack_require__(6),
+    imageOnload = function imageOnload() {
+  loadedImages++;
+  if (loadedImages === allImages.length) {
+    document.getElementById('loader').remove();
+  }
+},
+    canUseWebP = function canUseWebP() {
+  var elem = document.createElement('canvas');
+  return !!(elem.getContext && elem.getContext('2d')) && elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+},
+    createImage = function createImage(src) {
+  var image = new Image();
+  image.src = src;
+  image.onload = imageOnload;
+  return image;
+},
+    imagesSrcWithoutExt = ['./images/room0/px', './images/room0/nx', './images/room0/py', './images/room0/ny', './images/room0/pz', './images/room0/nz', './images/room1/px', './images/room1/nx', './images/room1/py', './images/room1/ny', './images/room1/pz', './images/room1/nz', './images/room2/px', './images/room2/nx', './images/room2/py', './images/room2/ny', './images/room2/pz', './images/room2/nz'],
+    ext = canUseWebP() ? 'webp' : 'jpg',
+    allImages = imagesSrcWithoutExt.map(function (src) {
+  return createImage(src + '.' + ext).src;
+}),
+    hashChangeCustomHandler = function hashChangeCustomHandler() {
   switch (location.hash) {
     case '#room1':
       images = allImages.slice(6, 12);
@@ -581,7 +602,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  cursor: move;\n}\n.arrow {\n  width: 40px;\n  height: 40px;\n  background: #5b2c6f;\n  box-shadow: 5px 5px 20px #000;\n  border: 5px solid #fff;\n  border-radius: 50%;\n  cursor: pointer;\n}\n.arrow:hover,\n.arrow:active {\n  opacity: 1;\n}\n", ""]);
+exports.push([module.i, "body {\n  margin: 0;\n  cursor: move;\n}\n\n.arrow {\n  width: 40px;\n  height: 40px;\n  background: #5b2c6f;\n  box-shadow: 5px 5px 20px #000;\n  border: 5px solid #fff;\n  border-radius: 50%;\n  cursor: pointer;\n}\n\n.arrow:hover,\n.arrow:active {\n  opacity: 1;\n}", ""]);
 
 // exports
 
