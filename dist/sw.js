@@ -1,8 +1,10 @@
 var serviceWorkerOption = {
   "assets": [
     "/panorama.js",
-    "/images/room0/py.webp",
+    "/images/arrow.svg",
+    "/images/door.svg",
     "/index.html",
+    "/images/room0/py.webp",
     "/images/room2/py.webp",
     "/images/room1/py.webp",
     "/images/room1/pz.webp",
@@ -20,9 +22,9 @@ var serviceWorkerOption = {
     "/images/room1/ny.webp",
     "/images/room1/pz.jpg",
     "/images/room0/nz.webp",
+    "/images/room2/pz.webp",
     "/images/room0/ny.webp",
     "/images/room1/nx.jpg",
-    "/images/room2/pz.webp",
     "/images/room2/nx.webp",
     "/images/room2/nz.jpg",
     "/images/room2/px.jpg",
