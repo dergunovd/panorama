@@ -1,6 +1,6 @@
 {
   "name": "Panorama DEMO",
-  "short_name": "Panorama DEMO",
+  "short_name": "Panorama",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": ".",

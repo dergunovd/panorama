@@ -53,6 +53,7 @@ const THREE = require('three/build/three.min'),
         points = [
           {
             url: '#room0',
+            className: 'door',
             position: [-496, -100, -300],
             rotation: [0, Math.PI / 2, 0]
           }
@@ -63,8 +64,9 @@ const THREE = require('three/build/three.min'),
         points = [
           {
             url: '#room0',
+            className: 'arrow',
             position: [496, -100, 496],
-            rotation: [0, Math.PI, 0]
+            rotation: [0, 0, Math.PI]
           }
         ];
         break;
@@ -73,11 +75,13 @@ const THREE = require('three/build/three.min'),
         points = [
           {
             url: '#room1',
+            className: 'door',
             position: [190, -100, -496],
             rotation: [0, 0, 0]
           },
           {
             url: '#room2',
+            className: 'arrow',
             position: [496, -200, -250],
             rotation: [0, -Math.PI / 2, 0]
           }
@@ -512,7 +516,7 @@ function init() {
   for (let i = points.length - 1; i > -1; i--) {
     const point = points[i];
     const element = document.createElement('a');
-    element.className = 'arrow';
+    element.className = `point ${point.className}`;
     element.href = point.url;
     const object = new THREE.CSS3DObject(element);
     object.position.fromArray(point.position);
