@@ -7,7 +7,8 @@
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
     "serve": "(cd dist; lite-server)",
-    "deploy": "scp -r dist/* dergunov.net:/var/www/3d.dergunov.net/html"
+    "deploy": "scp -r dist/* dergunov.net:/var/www/3d.dergunov.net/html",
+    "fix-images": "src/fiximages.sh src/public/images"
   },
   "repository": {
     "type": "git",

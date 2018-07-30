@@ -136,7 +136,7 @@ var THREE = __webpack_require__(6),
         url: '#room0',
         className: 'arrow',
         position: [496, -100, 496],
-        rotation: [0, 0, Math.PI]
+        rotation: [0, Math.PI, 0]
       }];
       break;
     default:
