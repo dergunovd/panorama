@@ -431,6 +431,7 @@ var camera = void 0,
     scene = void 0,
     renderer = void 0,
     controls = void 0,
+    touchControl = false,
     lon = -90,
     lat = 0,
     phi = 0,
@@ -540,6 +541,7 @@ function onDocumentTouchMove(event) {
   lat += (touch.screenY - touchY) * 0.1;
   touchX = touch.screenX;
   touchY = touch.screenY;
+  touchControl = true;
 }
 
 function onWindowResize() {
@@ -550,8 +552,8 @@ function onWindowResize() {
 
 function animate() {
   requestAnimationFrame(animate);
+  var degToRad = THREE.Math.degToRad;
   if (!controls.update()) {
-    var degToRad = THREE.Math.degToRad;
     lat = Math.max(-85, Math.min(85, lat));
     phi = degToRad(90 - lat);
     theta = degToRad(lon);
@@ -559,7 +561,12 @@ function animate() {
     target.y = Math.cos(phi);
     target.z = Math.sin(phi) * Math.sin(theta);
     camera.lookAt(target);
+  } else if (touchControl) {
+    theta = degToRad(90 + lon);
+    controls.alphaOffset = -theta * 1.5;
+    touchControl = false;
   }
+
   renderer.render(scene, camera);
 }
 
