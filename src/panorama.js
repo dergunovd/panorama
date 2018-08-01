@@ -529,9 +529,9 @@ function init() {
   document.body.appendChild(renderer.domElement);
 
   document.addEventListener('mousedown', onDocumentMouseDown, false);
-  document.addEventListener('wheel', onDocumentMouseWheel, false);
-  document.addEventListener('touchstart', onDocumentTouchStart, false);
-  document.addEventListener('touchmove', onDocumentTouchMove, false);
+  document.addEventListener('wheel', onDocumentMouseWheel, {passive: true});
+  document.addEventListener('touchstart', onDocumentTouchStart, {passive: true});
+  document.addEventListener('touchmove', onDocumentTouchMove, {passive: true});
   window.addEventListener('resize', onWindowResize, false);
 }
 

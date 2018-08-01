@@ -1,4 +1,16 @@
 {
+  "icons": [
+    {
+      "src": "icon_512x512.b52bd1ad9362814d0f0d476ee14d9197.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.973e6c3d9a18ab298318f489c9db0a2a.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
   "name": "Panorama DEMO",
   "short_name": "Panorama",
   "orientation": "portrait",

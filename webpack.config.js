@@ -77,7 +77,16 @@ module.exports = {
         display: 'standalone',
         background_color: '#fff',
         description: 'Demo panorama application',
-        theme_color: '#873600'
+        theme_color: '#873600',
+	icons: [{
+    	    src: 'src/public/panorama192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          }, {
+            src: 'src/public/panorama512.png',
+            sizes: '512x512',
+            type: 'image/png'
+        }]
       }
     )
   ]

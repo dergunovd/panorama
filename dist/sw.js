@@ -1,9 +1,12 @@
 var serviceWorkerOption = {
   "assets": [
     "/panorama.js",
-    "/images/door.svg",
     "/images/arrow.svg",
+    "/images/door.svg",
     "/index.html",
+    "/favicon.ico",
+    "/panorama192.png",
+    "/panorama512.png",
     "/images/room0/py.jpg",
     "/images/room2/py.jpg",
     "/images/room1/py.jpg",
