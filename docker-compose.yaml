@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+
+  client:
+    container_name: panorama_client
+    build: .
+    volumes:
+      - ./client:/client/build
+    command: 'yarn build'
