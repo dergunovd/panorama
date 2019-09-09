@@ -15,7 +15,7 @@ const Panorama: FC = () => (
     yaw={180}
     hfov={110}
     title="360° Panorama example"
-    author="univay. (Dmitry Dergunov)"
+    author={"<span>univay. (Dmitry Dergunov)<br /><a class=\"link\" href=\"https://t.me/dergunov_dmitry\">Получить альфа-доступ</a></span>"}
     autoLoad
     onLoad={() => {
       console.log('panorama loaded');
