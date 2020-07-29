@@ -2,66 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b1881e0-dea2-41d2-b692-44642d5203ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/config/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/config/2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/pano2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Configurator/Configurator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Configurator/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Landing/Landing.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Landing/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panorama/Panorama.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panorama/Panorama.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panorama/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/View/View.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/View/View.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/View/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/panorama-react.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panorama-react.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/arrow.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/door.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/nx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/nx.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/ny.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/ny.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/nz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/nz.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/px.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/px.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/py.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/py.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/pz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room0/pz.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/nx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/nx.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/ny.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/ny.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/nz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/nz.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/px.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/px.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/py.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/py.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/pz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room1/pz.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/nx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/nx.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/ny.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/ny.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/nz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/nz.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/px.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/px.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/py.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/py.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/pz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/room2/pz.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/pano.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/pano.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Panorama.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Configurator/Configurator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Configurator/Configurator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/View/View.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/View/View.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,14 +22,13 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Landing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -124,18 +69,6 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -151,54 +84,59 @@
       <workItem from="1568145610652" duration="2861000" />
       <workItem from="1568154414967" duration="85000" />
       <workItem from="1568834841348" duration="643000" />
-      <workItem from="1580691006894" duration="14972000" />
+      <workItem from="1580691006894" duration="16458000" />
+      <workItem from="1580850099145" duration="180000" />
+      <workItem from="1583774678438" duration="634000" />
+      <workItem from="1583873767658" duration="11000" />
+      <workItem from="1593704443274" duration="512000" />
+      <workItem from="1594976064002" duration="22000" />
+      <workItem from="1595981889618" duration="3362000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="263" key="GridCell.Tab.0.bottom" timestamp="1580705194993">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1595982313052">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580705194993" />
-    <state width="1874" height="263" key="GridCell.Tab.0.center" timestamp="1580705194992">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1595982313052" />
+    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1595982313052">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="263" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580705194992" />
-    <state width="1874" height="263" key="GridCell.Tab.0.left" timestamp="1580705194992">
+    <state width="1874" height="277" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1595982313052" />
+    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1595982313051">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="263" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580705194992" />
-    <state width="1874" height="263" key="GridCell.Tab.0.right" timestamp="1580705194993">
+    <state width="1874" height="277" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1595982313051" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1595982313052">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="263" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580705194993" />
-    <state x="729" y="442" width="462" height="184" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580699825004">
+    <state width="1874" height="277" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1595982313052" />
+    <state x="616" y="-14" width="683" height="779" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595985070034">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="729" y="442" width="462" height="184" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1580699825004" />
-    <state x="593" y="248" width="734" height="570" key="find.popup" timestamp="1580705947147">
+    <state x="616" y="-14" width="683" height="779" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1595985070034" />
+    <state x="650" y="256" width="619" height="554" key="find.popup" timestamp="1594976067843">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="593" y="248" width="734" height="570" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1580705947147" />
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1580695708007">
+    <state x="650" y="256" width="619" height="554" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594976067843" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1595985727425">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1580695708007" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1595985727425" />
   </component>
 </project>

@@ -7,8 +7,8 @@ export const View: React.FC<ViewProps> = props => {
   useEffect(() => {
     fetch(`/config/${props.match?.params.id}.json`)
       .then(res => res.json())
-      .then(res => setConfig(res));
-  }, []);
+      .then(setConfig);
+  }, [props.match]);
 
   return config ? (
     <div style={{ width: '100vw', height: '100vh' }}>
