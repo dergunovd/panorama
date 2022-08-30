@@ -1,15 +1,16 @@
-import React, { useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
-import { Panorama } from '../Panorama';
+import styled from '@emotion/styled';
 import {
   Button,
   Checkbox,
   FormControlLabel,
   TextField,
-  Typography
+  Typography,
 } from '@material-ui/core';
 import { PhotoCamera } from '@material-ui/icons';
+
+import { Config, Panorama } from '../Panorama';
 
 const Grid = styled.div`
   display: grid;
@@ -37,8 +38,8 @@ const PanoramaWrapper = styled.div`
   height: 100vh;
 `;
 
-export const Configurator: React.FC<any> = () => {
-  const { register, handleSubmit, getValues } = useForm({
+export const Configurator: FC = () => {
+  const { register, handleSubmit, getValues } = useForm<Config>({
     defaultValues: {
       width: '100%',
       height: '100%',
@@ -68,11 +69,11 @@ export const Configurator: React.FC<any> = () => {
       draggable: true,
       showFullscreenCtrl: true,
       showControls: true,
-      hotspotDebug: false
-    }
+      hotspotDebug: false,
+    },
   });
 
-  const onChange = useCallback((values: any) => {
+  const onChange = useCallback((values: Config) => {
     console.log(values);
   }, []);
 
@@ -96,7 +97,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('pitch')}
             inputProps={{
               min: -90,
-              max: 90
+              max: 90,
             }}
           />
 
@@ -105,7 +106,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('yaw')}
             inputProps={{
               min: -180,
-              max: 180
+              max: 180,
             }}
             type="number"
           />
@@ -115,7 +116,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('hfov')}
             inputProps={{
               min: 0,
-              max: 150
+              max: 150,
             }}
             type="number"
           />
@@ -129,7 +130,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('minHfov')}
             inputProps={{
               min: 0,
-              max: 150
+              max: 150,
             }}
             type="number"
           />
@@ -139,7 +140,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('maxHfov')}
             inputProps={{
               min: 0,
-              max: 150
+              max: 150,
             }}
             type="number"
           />
@@ -149,7 +150,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('minPitch')}
             inputProps={{
               min: -90,
-              max: 90
+              max: 90,
             }}
             type="number"
           />
@@ -159,7 +160,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('maxPitch')}
             inputProps={{
               min: -90,
-              max: 90
+              max: 90,
             }}
             type="number"
           />
@@ -169,7 +170,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('minYaw')}
             inputProps={{
               min: -180,
-              max: 180
+              max: 180,
             }}
             type="number"
           />
@@ -179,7 +180,7 @@ export const Configurator: React.FC<any> = () => {
             {...register('maxYaw')}
             inputProps={{
               min: -180,
-              max: 180
+              max: 180,
             }}
             type="number"
           />
@@ -189,22 +190,18 @@ export const Configurator: React.FC<any> = () => {
             {...register('autoRotate')}
             inputProps={{
               min: 0,
-              max: 180
+              max: 180,
             }}
             type="number"
           />
 
           <FormControlLabel
-            control={
-              <Checkbox {...register('compass')} color="primary" />
-            }
+            control={<Checkbox {...register('compass')} color="primary" />}
             label="Компас"
           />
 
           <FormControlLabel
-            control={
-              <Checkbox {...register('autoLoad')} color="primary" />
-            }
+            control={<Checkbox {...register('autoLoad')} color="primary" />}
             label="Автозагрузка"
           />
 
@@ -219,82 +216,46 @@ export const Configurator: React.FC<any> = () => {
           />
 
           <FormControlLabel
-            control={
-              <Checkbox
-                {...register('showZoomCtrl')}
-                color="primary"
-              />
-            }
+            control={<Checkbox {...register('showZoomCtrl')} color="primary" />}
             label="Показывать зум"
           />
 
           <FormControlLabel
-            control={
-              <Checkbox
-                {...register('keyboardZoom')}
-                color="primary"
-              />
-            }
+            control={<Checkbox {...register('keyboardZoom')} color="primary" />}
             label="Зум клавиатурой"
           />
 
           <FormControlLabel
             control={
-              <Checkbox
-                {...register('disableKeyboardCtrl')}
-                color="primary"
-              />
+              <Checkbox {...register('disableKeyboardCtrl')} color="primary" />
             }
             label="Отключить управление клавиатурой"
           />
 
           <FormControlLabel
-            control={
-              <Checkbox
-                {...register('mouseZoom')}
-                color="primary"
-              />
-            }
+            control={<Checkbox {...register('mouseZoom')} color="primary" />}
             label="Зум мышью"
           />
 
           <FormControlLabel
-            control={
-              <Checkbox
-                {...register('draggable')}
-                color="primary"
-              />
-            }
+            control={<Checkbox {...register('draggable')} color="primary" />}
             label="Перетаскивание"
           />
 
           <FormControlLabel
             control={
-              <Checkbox
-                {...register('showFullscreenCtrl')}
-                color="primary"
-              />
+              <Checkbox {...register('showFullscreenCtrl')} color="primary" />
             }
             label="Показывать кнопку полного экрана"
           />
 
           <FormControlLabel
-            control={
-              <Checkbox
-                {...register('showControls')}
-                color="primary"
-              />
-            }
+            control={<Checkbox {...register('showControls')} color="primary" />}
             label="showControls"
           />
 
           <FormControlLabel
-            control={
-              <Checkbox
-                {...register('hotspotDebug')}
-                color="primary"
-              />
-            }
+            control={<Checkbox {...register('hotspotDebug')} color="primary" />}
             label="hotspotDebug"
           />
 
@@ -307,15 +268,9 @@ export const Configurator: React.FC<any> = () => {
             </label>
           </div>
 
-          <TextField
-            label="Превью Заголовок"
-            {...register('previewTitle')}
-          />
+          <TextField label="Превью Заголовок" {...register('previewTitle')} />
 
-          <TextField
-            label="Превью Автор"
-            {...register('previewAuthor')}
-          />
+          <TextField label="Превью Автор" {...register('previewAuthor')} />
 
           <br />
 

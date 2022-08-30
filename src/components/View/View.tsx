@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { Panorama, Config } from '../Panorama';
-import { useParams } from "react-router";
 
-export const View: React.FC = () => {
+export const View: FC = () => {
   const { id } = useParams();
   const [config, setConfig] = useState<Config | null>(null);
+
   useEffect(() => {
     fetch(`/config/${id}.json`)
       .then((res) => res.json())

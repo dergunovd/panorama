@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 // @ts-ignore
 import { Pannellum } from 'pannellum-react';
-import { Config } from "./Panorama.types";
+import { Config } from './Panorama.types';
 
 /* https://github.com/farminf/pannellum-react */
-export const Panorama: FC<Config> = config => (
+export const Panorama: FC<Config> = (config) => (
   <Pannellum
-    width={config.width || '100%'}
-    height={config.height || '100%'}
+    width={config.width ?? '100%'}
+    height={config.height ?? '100%'}
     image={config.image}
     pitch={config.pitch}
     yaw={config.yaw}
@@ -36,7 +36,7 @@ export const Panorama: FC<Config> = config => (
     showControls={config.showControls}
     hotspotDebug={config.hotspotDebug}
   >
-    {config.spots?.map(spot => (
+    {config.spots?.map((spot) => (
       <Pannellum.Hotspot
         type={spot.type}
         pitch={spot.pitch}

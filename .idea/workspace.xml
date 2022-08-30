@@ -4,12 +4,23 @@
     <list default="true" id="6b1881e0-dea2-41d2-b692-44642d5203ba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Configurator/Configurator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Configurator/Configurator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Configurator/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Configurator/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Landing/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Landing/Landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Landing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Landing/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Panorama/Panorama.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Panorama/Panorama.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Panorama/Panorama.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Panorama/Panorama.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Panorama/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Panorama/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/View/View.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/View/View.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/View/View.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/View/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/View/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +109,7 @@
       <workItem from="1593704443274" duration="512000" />
       <workItem from="1594976064002" duration="22000" />
       <workItem from="1595981889618" duration="3362000" />
-      <workItem from="1661866651145" duration="2703000" />
+      <workItem from="1661866651145" duration="4153000" />
     </task>
     <servers />
   </component>
