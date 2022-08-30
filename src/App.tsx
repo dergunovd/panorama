@@ -1,23 +1,20 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Redirect,
   Route,
-  Switch
+  Routes
 } from 'react-router-dom';
 import { View, Configurator, Landing } from './components';
 
-const App: React.FC = () => {
-  return (
+const App: React.FC = () =>
+  (
     <Router>
-      <Switch>
-        <Route path="/p/:id" component={View} />
-        <Route path="/configurator" component={Configurator} />
-        <Route path="/" component={Landing} />
-        <Redirect to="/p/1" />
-      </Switch>
+      <Routes>
+        <Route path="/p/:id" element={<View/>}/>
+        <Route path="/configurator" element={<Configurator/>}/>
+        <Route path="/" element={<Landing/>}/>
+      </Routes>
     </Router>
   );
-};
 
 export default App;

@@ -72,7 +72,7 @@ export const Configurator: React.FC<any> = () => {
     }
   });
 
-  const onChange = useCallback(values => {
+  const onChange = useCallback((values: any) => {
     console.log(values);
   }, []);
 
@@ -93,8 +93,7 @@ export const Configurator: React.FC<any> = () => {
           <TextField
             label="По вертикали(-90 - 90)"
             type="number"
-            name="pitch"
-            inputRef={register()}
+            {...register('pitch')}
             inputProps={{
               min: -90,
               max: 90
@@ -103,8 +102,7 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="По горизонтали (-180 - 180)"
-            name="yaw"
-            inputRef={register()}
+            {...register('yaw')}
             inputProps={{
               min: -180,
               max: 180
@@ -114,8 +112,7 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="Глубина"
-            name="hfov"
-            inputRef={register()}
+            {...register('hfov')}
             inputProps={{
               min: 0,
               max: 150
@@ -123,14 +120,13 @@ export const Configurator: React.FC<any> = () => {
             type="number"
           />
 
-          <TextField label="Заголовок" name="title" inputRef={register()} />
+          <TextField label="Заголовок" {...register('title')} />
 
-          <TextField label="Автор" name="author" inputRef={register()} />
+          <TextField label="Автор" {...register('author')} />
 
           <TextField
             label="Минимальная глубина"
-            name="minHfov"
-            inputRef={register()}
+            {...register('minHfov')}
             inputProps={{
               min: 0,
               max: 150
@@ -140,8 +136,7 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="Максимальная глубина"
-            name="maxHfov"
-            inputRef={register()}
+            {...register('maxHfov')}
             inputProps={{
               min: 0,
               max: 150
@@ -151,8 +146,7 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="Минимальный угол по вертикали"
-            name="minPitch"
-            inputRef={register()}
+            {...register('minPitch')}
             inputProps={{
               min: -90,
               max: 90
@@ -162,8 +156,7 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="Максимальная угол по вертикали"
-            name="maxPitch"
-            inputRef={register()}
+            {...register('maxPitch')}
             inputProps={{
               min: -90,
               max: 90
@@ -173,8 +166,7 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="Минимальный угол по горизонтали"
-            name="minYaw"
-            inputRef={register()}
+            {...register('minYaw')}
             inputProps={{
               min: -180,
               max: 180
@@ -184,8 +176,7 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="Максимальная угол по горизонтали"
-            name="maxYaw"
-            inputRef={register()}
+            {...register('maxYaw')}
             inputProps={{
               min: -180,
               max: 180
@@ -195,8 +186,7 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="Вращение (градусов в секунду)"
-            name="autoRotate"
-            inputRef={register()}
+            {...register('autoRotate')}
             inputProps={{
               min: 0,
               max: 180
@@ -206,14 +196,14 @@ export const Configurator: React.FC<any> = () => {
 
           <FormControlLabel
             control={
-              <Checkbox name="compass" inputRef={register()} color="primary" />
+              <Checkbox {...register('compass')} color="primary" />
             }
             label="Компас"
           />
 
           <FormControlLabel
             control={
-              <Checkbox name="autoLoad" inputRef={register()} color="primary" />
+              <Checkbox {...register('autoLoad')} color="primary" />
             }
             label="Автозагрузка"
           />
@@ -221,8 +211,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="orientationOnByDefault"
-                inputRef={register()}
+                {...register('orientationOnByDefault')}
                 color="primary"
               />
             }
@@ -232,8 +221,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="showZoomCtrl"
-                inputRef={register()}
+                {...register('showZoomCtrl')}
                 color="primary"
               />
             }
@@ -243,8 +231,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="keyboardZoom"
-                inputRef={register()}
+                {...register('keyboardZoom')}
                 color="primary"
               />
             }
@@ -254,8 +241,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="disableKeyboardCtrl"
-                inputRef={register()}
+                {...register('disableKeyboardCtrl')}
                 color="primary"
               />
             }
@@ -265,8 +251,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="mouseZoom"
-                inputRef={register()}
+                {...register('mouseZoom')}
                 color="primary"
               />
             }
@@ -276,8 +261,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="draggable"
-                inputRef={register()}
+                {...register('draggable')}
                 color="primary"
               />
             }
@@ -287,8 +271,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="showFullscreenCtrl"
-                inputRef={register()}
+                {...register('showFullscreenCtrl')}
                 color="primary"
               />
             }
@@ -298,8 +281,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="showControls"
-                inputRef={register()}
+                {...register('showControls')}
                 color="primary"
               />
             }
@@ -309,8 +291,7 @@ export const Configurator: React.FC<any> = () => {
           <FormControlLabel
             control={
               <Checkbox
-                name="hotspotDebug"
-                inputRef={register()}
+                {...register('hotspotDebug')}
                 color="primary"
               />
             }
@@ -328,14 +309,12 @@ export const Configurator: React.FC<any> = () => {
 
           <TextField
             label="Превью Заголовок"
-            name="previewTitle"
-            inputRef={register()}
+            {...register('previewTitle')}
           />
 
           <TextField
             label="Превью Автор"
-            name="previewAuthor"
-            inputRef={register()}
+            {...register('previewAuthor')}
           />
 
           <br />

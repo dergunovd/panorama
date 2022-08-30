@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Panorama, Config } from '../Panorama';
-import { ViewProps } from './View.types';
+import { useParams } from "react-router";
 
-export const View: React.FC<ViewProps> = props => {
+export const View: React.FC = () => {
+  const { id } = useParams();
   const [config, setConfig] = useState<Config | null>(null);
   useEffect(() => {
-    fetch(`/config/${props.match?.params.id}.json`)
-      .then(res => res.json())
+    fetch(`/config/${id}.json`)
+      .then((res) => res.json())
       .then(setConfig);
-  }, [props.match]);
+  }, [id]);
 
   return config ? (
     <div style={{ width: '100vw', height: '100vh' }}>
